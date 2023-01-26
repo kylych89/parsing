@@ -31,4 +31,6 @@ body1 = soup.find('div', class_='text')
 
 all_text = f'Тема: {title1.text}\n{body1.text}'
 
+print(all_text)
+
 service.save_data(all_text)
