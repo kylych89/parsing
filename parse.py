@@ -20,17 +20,17 @@ import service
 # service.save_data(tx)
 
 
-TEMPLATE_URL = 'https://www.tazabek.kg/news:1855143/?from=portal&place=nowread&b=1'
+TEMPLATE_URL = 'https://www.tazabek.kg/news:1855038/?from=tazabek&place=newsload'
 
 req = requests.get(TEMPLATE_URL)
 
 soup = bs(req.text, 'html.parser')
 title1 = soup.find('h2')
 
+
 body1 = soup.find('div', class_='text')
 
-all_text = f'Тема: {title1.text}\n{body1.text}'
 
-print(all_text)
+all_text = f'Тема: {title1.text}\n{body1.text}'
 
 service.save_data(all_text)
